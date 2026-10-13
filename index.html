@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumos</title>
+    <link rel="stylesheet" href="index.css">
+    <title>Login - Lumos</title>
 </head>
 <body>
-    <h1>Lumos</h1>
+    <div class="login-box">
+        <div class="slogan">
+            <img src="slogan.png" alt="slogan do Lumos" width="100">
+            <h1 class="nome-empresa">Lumos</h1>
+        </div>
+        
+        <form>
+            <div class="campo">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="campo">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required><br>
+                <a href="#" class="esqueci-senha">Esqueci minha senha</a>
+            </div>
+            <button type="submit" class="btn-login">Entrar</button>
+        </form>
+        <!-- Divisória com texto entre as linhas -->
+        <div class="divisoria">
+             <span>ACESSO RESTRITO</span><br>
+        </div>
+        <!-- Texto de suporte com link -->
+            <p class="suporte-texto">
+             Problemas para acessar? <a href="#">Fale com o suporte</a>
+             </p>
+    </div>
+
 </body>
 </html>

@@ -1,0 +1,77 @@
+* {  margin: 0; 
+     padding: 0; 
+     box-sizing: border-box;
+    }
+
+body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #080D18; /* Cor de fundo da página */
+    }
+.login-box {
+  display: flex;
+  flex-direction: column; /* Empilha a logo e os elementos na vertical */
+  align-items: center;    /* Centraliza os elementos no meio */
+  gap: 16px;              /* Espaço entre os elementos internos */
+  
+  width: 100%;
+  max-width: 400px;       /* Garante um tamanho agradável na tela */
+
+  background-color: #111A2C;
+  border: 2px solid #233148; /* Cor de borda levemente mais clara para se destacar */
+  border-radius: 30px; 
+
+  /* PADINNG UNIFICADO: 
+     10px no topo (conteúdo colado em cima)
+     40px nas laterais (esquerda/direita)
+     40px no fundo (baixo)
+  */
+  padding: 30px 100px 30px; 
+  box-sizing: border-box;
+}
+
+/* Tamanho da Imagem da Logo */
+.logo-img {
+  width: 60px;
+  height: auto;
+  
+}
+
+/* Estilo do Nome */
+.nome-empresa {
+  font-size: 28px;
+  color: #ffffff;
+  margin: 0;
+  font-family: 'arial', sans-serif;
+}
+ 
+.campo label {
+  display: block;      /* Faz o label ocupar a linha inteira */
+  margin-bottom: 6px;  /* Cria o espaço entre o texto e o input */
+  font-size: 16px;
+  color: #ffffff;
+  font-family: 'arial', sans-serif;
+}
+
+.campo input {
+  width: 100%;         /* Faz a caixa ocupar toda a largura disponível */
+  padding: 15px 170px;
+  border-radius: 12px;
+  border: 1px ;     /* espessura da borda */
+  background-color: #080D18; /* Cor de fundo do input */
+}
+.esqueci-senha {
+  display: block; /* Torna o link um bloco para aceitar a largura */
+  text-align: right; /* Alinha o link à direita */
+  width: 100%;  /* Ocupa a largura toda */
+  font-size: 12px;
+  color: #2EB4AF;
+  text-decoration: none; /* Remove o sublinhado do link */  
+}
+
+/* Adiciona espaçamento na parte de baixo de cada grupo de campo */
+.campo {
+  margin-bottom: 24px; /* Aumente este valor para afastar mais (ex: 20px, 24px, 30px) */
+}
