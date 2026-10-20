@@ -1,0 +1,385 @@
+/* ============================================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #080D18; /* Fundo escuro geral */
+}
+
+/* Container flexível para colocar Sidebar e Conteúdo Lado a Lado */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* ============================================================
+   2. ESTRUTURA DA SIDEBAR
+   ============================================================ */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #111A2C;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-right: 1px solid #1E293B;
+}
+
+/* Logo e Nome */
+.sidebar-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #1E293B;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+}
+
+.sidebar-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nome-empresa {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+
+.sublogo {
+  font-size: 9px;
+  color: #8a99ad;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* ============================================================
+   3. MENU DE NAVEGAÇÃO
+   ============================================================ */
+.painel {
+  font-size: 13px;
+  color: #2EB4AF;
+  padding: 0 12px;
+  margin-bottom: 8px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Links do Menu (Regra única e limpa) */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent; /* Borda transparente para não "pular" no hover */
+}
+
+.menu-item:hover {
+  background-color: #1E293B;
+  border-color: #196865;
+  color: #ffffff;
+}
+
+.menu-item.active {
+  background-color: rgba(81, 202, 198, 0.15);
+  color: #2EB4AF;
+  font-weight: bold;
+  border: 1px solid #196865;
+}
+
+/* Ícones */
+.menu-icon, 
+.menu-icon-left {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.menu-text {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Notificação (Bolinha Vermelha) */
+.badge {
+  margin-left: auto;
+  background-color: #e11d48;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: justify-content;
+  justify-content: center;
+}
+
+/* ============================================================
+   4. RODAPÉ DA SIDEBAR
+   ============================================================ */
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #1E293B;
+}
+
+.avatar-badge {
+  width: 40px;
+  height: 40px;
+  background-color: #172136;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eab308;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.user-sub {
+  color: #64748b;
+  font-size: 11px;
+}
+
+/* ============================================================
+   5. ÁREA DE CONTEÚDO PRINCIPAL (DASHBOARD)
+   ============================================================ */
+.conteudo-principal {
+  flex: 1;
+  background-color: #080D18; /* Fundo escuro igual ao body */
+  padding: 32px;
+  overflow-y: auto;
+  color: #ffffff;
+}
+
+/* Cards escuros combinando com o tema */
+.card {
+  background-color: #111A2C;
+  border: 1px solid #1E293B;
+  padding: 24px;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+/* ============================================================
+   ESTILOS DO MAPA DE OCORRÊNCIAS
+   ============================================================ */
+
+/* Cabeçalho */
+.page-header h1 {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.page-header p {
+  color: #64748B;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Layout em Grid das Duas Colunas */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas de tamanhos iguais */
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* Em telas menores, empilha os cards */
+  }
+}
+
+/* Card Genérico */
+.card {
+  background-color: #0E1626;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #1E293B;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-header h2 {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.card-header h2 span {
+  font-weight: 400;
+}
+
+.status-time, .regioes-count {
+  font-size: 11px;
+  color: #64748B;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* --- PAINEL DO MAPA --- */
+.mapa-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden; /* Corta os cantos da imagem para acompanhar o arredondamento */
+  border: 1px solid #1E293B;
+  margin-bottom: 16px;
+  background-color: #172136;
+}
+
+.mapa-img {
+  width: 100%;       /* Ocupa 100% da largura do card */
+  height: auto;      /* Mantém a proporção correta da imagem */
+  display: block;
+  object-fit: cover; /* Garante um bom enquadramento */
+}
+
+
+.mapa-legenda {
+  display: flex;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #94A3B8;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.red { background-color: #EF4444; }
+.dot.gray { background-color: #475569; }
+
+/* --- PAINEL DAS CIDADES --- */
+.cidades-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cidade-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #131D31;
+  border: 1px solid #1E293B;
+}
+
+/* Borda avermelhada para os itens ativos */
+.cidade-item.status-ativa {
+  border-color: #7f1d1d;
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.cidade-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.indicator-dot.red {
+  background-color: #EF4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+.indicator-dot.blue {
+  background-color: #3B82F6;
+}
+
+.cidade-nome {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.cidade-tempo {
+  color: #64748B;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* Etiquetas (Badges) */
+.badge-status {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-status.ativa {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #EF4444;
+}
+
+.badge-status.resolvida {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #60A5FA;
+}
