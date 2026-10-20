@@ -45,8 +45,11 @@ body {
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
-  margin: 0;               /* Remove margens para não afastar do slogan */
-  line-height: 1.1;        /* Mantém o espaçamento bem ajustado */
+  margin-top: 10px;       /* Aumenta este valor (ex: 8px, 10px) se quiseres baixar mais */
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  line-height: 1.1;        /* Mantém o espaçamentmo bem ajustado */
   letter-spacing: 0.5px;
 }
 
@@ -57,14 +60,16 @@ body {
   color: #8a99ad;          /* Cinza claro do seu tema */
   letter-spacing: 1px;     /* Espaçamento entre as letras */
   text-transform: uppercase;
-  margin-top: 5px;         /* Espacinho sutil em relação ao título */
+  margin-top: 4px;         /* Espacinho sutil em relação ao título */
 }
 
 .painel{
     font-family: arial, sans-serif;
     font-size: 13px;
     color: #2EB4AF;          /* Cinza claro do seu tema */
-    padding: 0 12px;
+    padding: 0 4px;
+    margin-bottom: 8px;
+
 }
 /* Container dos links */
 .sidebar-menu {
@@ -84,12 +89,14 @@ body {
   border-radius: 8px;           /* Bordas arredondadas nos itens */
   transition: all 0.2s ease;
   border: 1px solid #94A3B8; /* Borda transparente para manter o layout consistente */
+  gap: 12px;                /* Espaço horizontal entre a imagem e o texto */
 }
 
 /* Efeito ao passar o mouse */
 .menu-item:hover {
   background-color: #1E293B;
-  border: 1px solid #196865;
+  border-color: #196865;
+  color: #ffffff;
 }
 
 /* Item ativo (página atual) */
@@ -97,7 +104,11 @@ body {
   background-color: rgba(81, 202, 198, 0.15); /* Fundo sutil com transparência */
   color: #2EB4AF;
   font-weight: bold;
-  border: 2px solid #196865;
+  border: 1px solid #196865;
+  /* Apenas muda a COR da borda que já existia transparente */
+  border-color: #2EB4AF; 
+  color: #2EB4AF;
+  font-weight: 600; /* Mantenha no máximo 600 em vez de bold/700 para não esticar a largura */
 }
 /* Container de cada item do menu */
 .menu-item {
@@ -107,7 +118,7 @@ body {
   padding: 10px 16px;
   text-decoration: none;
   color: #94A3B8;
-  border-radius: 8px;
+  border: none;
 }
 
 /* Estilo para a imagem do ícone */
@@ -122,8 +133,7 @@ body {
   height: 22px;
 }
 /* Texto do meio */
-.menu-text{
-    color: #94a3b8;
+.menu-text{ 
     font-size: 14px;
     line-height: 1.2;
 }
