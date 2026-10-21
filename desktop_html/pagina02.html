@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pagina02.css">
+    <title>Lumos</title>
+</head>
+<body>
+
+  <!-- TUDO TEM DE ESTAR DENTRO DESTA DIV -->
+  <div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="../img/slogan.png" alt="Logo" class="logo">
+        <div class="sidebar-text">
+          <h2 class="nome-empresa">LUMOS</h2>
+          <p class="sublogo">REDE E INTEGRIDADE</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <p class="painel">PAINÉIS</p>
+        <a href="pagina01.html" class="menu-item">
+          <img src="../img/maps.png" alt="Mapa de Ocorrências" class="menu-icon">
+          <span>Mapa de Ocorrências</span>
+          <span class="badge">2</span>
+        </a>
+        <a href="pagina02.html" class="menu-item active">
+          <img src="../img/indicadores_select.png" alt="Indicadores ENEL" class="menu-icon">
+          <span class="menu-text">Indicadores ENEL</span>
+        </a>
+        <a href="pagina03.html" class="menu-item">
+          <img src="../img/status.png" alt="Status da Rede" class="menu-icon">
+          <span>Status da Rede</span>
+        </a>
+        <a href="pagina04.html" class="menu-item">
+          <img src="../img/alertas.png" alt="Alertas Críticos" class="menu-icon">
+          <span>Alertas Críticos</span>
+          <span class="badge">1</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="avatar-badge">CE</div>
+        <div class="user-info">
+          <span class="user-name">Centro de Operação</span>
+          <span class="user-sub">Enel Ceará</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1>Indicadores ENEL</h1>
+        <p>Continuidade do serviço — DEC e FEC comparados às metas oficiais</p>
+      </header>
+
+      <!-- Cartões KPIs -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-title">DEC MÉDIO (H)</span>
+          <span class="kpi-value">9,8</span>
+          <div class="kpi-status status-danger">
+            <span class="arrow">▲</span> 1,2h acima da meta
+          </div>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-title">FEC MÉDIO (H)</span>
+          <span class="kpi-value">6,2</span>
+          <div class="kpi-status status-danger">
+            <span class="arrow">▲</span> 0,9 acima da meta
+          </div>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-title">OCORRÊNCIAS DO MÊS</span>
+          <span class="kpi-value">23</span>
+          <div class="kpi-status status-danger">
+            <span class="arrow">▲</span> 15% vs. mês anterior
+          </div>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-title">KM DE CABO EM RISCO</span>
+          <span class="kpi-value">18,4</span>
+          <div class="kpi-status status-success">
+            <span class="arrow">▲</span> 3,6km após ronda
+          </div>
+        </div>
+      </div>
+
+      <!-- ÁREA DOS GRÁFICOS (MUITO IMPORTANTE: COM OS CANVASES) -->
+      <div class="charts-grid">
+        <div class="chart-card">
+          <div class="chart-header">
+            <h2>DEC <span>— Duração Equivalente de interrupção</span></h2>
+            <span class="chart-unit">HORAS / MÊS</span>
+          </div>
+          <div class="chart-body">
+            <canvas id="decChart"></canvas>
+          </div>
+          <div class="chart-legend">
+            <span class="legend-item"><span class="dot target"></span> Meta ENEL</span>
+            <span class="legend-item"><span class="dot current"></span> Atual</span>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <h2>FEC <span>— Frequência Equivalente de interrupção</span></h2>
+            <span class="chart-unit">VEZES / MÊS</span>
+          </div>
+          <div class="chart-body">
+            <canvas id="fecChart"></canvas>
+          </div>
+          <div class="chart-legend">
+            <span class="legend-item"><span class="dot target"></span> Meta ENEL</span>
+            <span class="legend-item"><span class="dot current"></span> Atual</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+  </div> <!-- SÓ FECHA A APP-CONTAINER AQUI! -->
+
+  <!-- SCRIPTS NO FINAL DO BODY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="../js/pagina02.js"></script>
+
+</body>
+</html>
