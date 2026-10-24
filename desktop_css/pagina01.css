@@ -59,7 +59,7 @@ html, body {
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
-  margin: 0;
+  margin-top: 2px;
   line-height: 1.1;
   letter-spacing: 0.5px;
 }
@@ -69,23 +69,96 @@ html, body {
   color: #8a99ad;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-top: 5px;
+  margin-top: 4px;
+}
+/* Container da busca */
+.search-container {
+  margin-bottom: 24px;
+  width: 100%;
 }
 
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #111A2C;
+  border: 1px solid #1E293B;
+  border-radius: 10px;
+  padding: 6px 12px;
+  gap: 10px;
+  transition: border-color 0.2s ease;
+}
+
+/* Efeito de foco quando se clica na caixa */
+.search-box:focus-within {
+  border-color: #2EB4AF;
+  box-shadow: 0 0 8px rgba(46, 180, 175, 0.2);
+}
+
+.search-icon {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+/* Campo de digitação */
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+.search-input::placeholder {
+  color: #64748B;
+}
+
+/* Botão de Pesquisar */
+.search-button {
+  background-color: #2EB4AF;
+  color: #080D18;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+/* Botão Limpar (Secundário) */
+.clear-button {
+  background-color: transparent;
+  color: #94A3B8;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: #259894;
+}
 /* ============================================================
    3. MENU DE NAVEGAÇÃO
    ============================================================ */
 .painel {
   font-size: 13px;
   color: #2EB4AF;
-  padding: 0 12px;
-  margin-bottom: 8px;
+  padding: 0 4px;
+  margin-bottom: 0;
+  font-family: arial, sans-serif;
+  margin-top: 12px;     /* Distância em relação ao separador de cima */
+  margin-bottom: 8px;   /* Diminui para aproximar do primeiro botão do menu */
 }
 
 .sidebar-menu {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 /* Links do Menu (Regra única e limpa) */
@@ -98,8 +171,7 @@ html, body {
   text-decoration: none;
   font-size: 14px;
   border-radius: 8px;
-  transition: all 0.2s ease;
-  border: 1px solid transparent; /* Borda transparente para não "pular" no hover */
+  
 }
 
 .menu-item:hover {
@@ -382,4 +454,29 @@ html, body {
 .badge-status.resolvida {
   background-color: rgba(59, 130, 246, 0.15);
   color: #60A5FA;
+}
+#map {
+  width: 100%;
+  height: 380px; /* Garante a altura do container do mapa */
+  border-radius: 8px;
+  background-color: #080D18;
+  z-index: 1;
+}
+
+/* Bolinhas de marcação personalizadas do mapa */
+.custom-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+}
+
+.marker-active {
+  background-color: #EF4444; /* Vermelho para ocorrencia ativa */
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+}
+
+.marker-resolved {
+  background-color: #3B82F6; /* Azul para resolvida */
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
 }

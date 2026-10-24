@@ -122,16 +122,24 @@ body {
 .campo {
   margin-bottom: 24px; /* Aumente este valor para afastar mais (ex: 20px, 24px, 30px) */
 }
-.btn-login{
-  width: 100%;
-  padding: 12px;
+
+.btn-login {
+  display: block;          /* Ocupa a largura total */
+  width: 100%;             /* Garante 100% do espaço disponível */
+  padding: 12px 0;         /* Altura e espaçamento interno */
+  background-color: #26aba3; /* Cor verde da tela */
+  color: #0d1b2a;          /* Cor do texto */
+  text-align: center;      /* Centraliza o texto */
+  text-decoration: none;   /* Remove o sublinhado de link */
+  font-weight: bold;
+  box-sizing: border-box;  /* Evita que o padding altere a largura total */
   border-radius: 16px 16px 16px 0 ; /* Bordas arredondadas */
-  border: none; /* Remove a borda padrão do botão */
-  background-color: #2EB4AF; /* Cor de fundo do botão */
-  color: #080D18; /* Cor do texto do botão */
-  font-size: 16px;
   font-family: 'arial', sans-serif;
-  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+.btn-login:hover {
+  background-color: #1d8881; /* Tom de verde mais escuro */
+  transition: background-color 0.2s ease; /* Transição suave */
+  font-weight: bold;
 }
 .divisoria {
   display: flex;
