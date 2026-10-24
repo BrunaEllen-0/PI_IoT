@@ -1,0 +1,366 @@
+/* ============================================================
+   1. RESET GLOBAL E BASE
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+ height: 100%;
+  width: 100%;
+  background-color: #080D18;
+  color: #ffffff;
+}
+
+/* ============================================================
+   2. CONTAINER PRINCIPAL (ALINHA SIDEBAR E MAIN LADO A LADO)
+   ============================================================ */
+.app-container {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  min-height: 100vh;
+  align-items: stretch; /* Estica a sidebar até à altura total do conteúdo */
+
+}
+
+/* ============================================================
+   3. BARRA LATERAL (SIDEBAR)
+   ============================================================ */
+.sidebar {
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+  height: 100vh; /* Ocupa 100% da altura da janela */
+  position: sticky;
+  top: 0;
+  background-color: #111a2c;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-right: 1px solid #1e293b;
+  flex-shrink: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Logo e Nome da Marca */
+.sidebar-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #1E293B;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+}
+
+.sidebar-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nome-empresa {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.sublogo {
+  font-size: 9px;
+  color: #8A99AD;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+/* Título da Secção "PAINÉIS" */
+.painel {
+  font-size: 13px;
+  color: #2EB4AF;
+  padding: 0 4px;
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+
+/* Links do Menu Vertical */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1; /* Faz o menu expandir e empurrar o rodapé para o fundo */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent; /* Reserva o espaço da borda para não deslocar itens */
+  box-sizing: border-box;
+}
+
+.menu-item:hover {
+  background-color: #1E293B;
+  border-color: #196865;
+  color: #ffffff;
+}
+
+/* Estado Ativo (Página Atual) */
+.menu-item.active {
+  background-color: rgba(46, 180, 175, 0.15);
+  border-color: #2EB4AF;
+  color: #2EB4AF;
+  font-weight: 600;
+}
+
+.menu-icon, .menu-icon-left {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.menu-text {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.badge {
+  margin-left: auto;
+  background-color: #E11D48;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rodapé da Sidebar */
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #1E293B;
+}
+
+.avatar-badge {
+  width: 40px;
+  height: 40px;
+  background-color: #172136;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #EAB308;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.user-sub {
+  color: #64748B;
+  font-size: 11px;
+}
+
+/* Conteudo da pagina */
+
+
+/* Container ajustado para ocupar 100% da largura da tela/área principal */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  background-color: #080D18;
+}
+.alertas-container {
+  padding: 24px 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* CABEÇALHO */
+.page-header-alertas h1 {
+   font-size: 24px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.page-header-alertas p {
+  color: #64748B;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* BANNER SUPERIOR */
+.banner-notificacoes {
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  padding: 14px 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.badge-eventos {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+/* CARDS DE ALERTA */
+.card-alerta {
+  background-color: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  border-left-width: 4px;
+  border-left-style: solid;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* BORDAS DE ESTADO */
+.border-critico { border-left-color: #ff3366; }
+.border-atendimento { border-left-color: #f59e0b; }
+.border-resolvido { border-left-color: #10b981; }
+
+.alerta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alerta-titulo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Estilo para as imagens dos ícones circulados */
+.alerta-icone-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.alerta-titulo-group h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.alerta-hora {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+/* BADGES DE STATUS */
+.badge-alerta {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.badge-alerta.critico {
+  background-color: rgba(255, 51, 102, 0.15);
+  color: #ff3366;
+}
+
+.badge-alerta.atendimento {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.badge-alerta.resolvido {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.alerta-descricao {
+  color: #d1d5db;
+  font-size: 0.9rem;
+  margin: 10px 0 6px 0;
+}
+
+.alerta-localizacao {
+  color: #6b7280;
+  font-size: 0.8rem;
+  margin: 0 0 16px 0;
+}
+
+/* BOTÕES DE AÇÃO */
+.alerta-acoes {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.btn-acionar {
+  background-color: #ff3366;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-historico {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #374151;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-acionar:hover { opacity: 0.9; }
+.btn-historico:hover { background-color: #1f2937; }
