@@ -370,7 +370,17 @@ html, body {
     padding: 10px 20px;
     background-color: transparent; /* Fundo branco */
     color: #ffffff;            /* Texto preto para contraste */
-    border: 1px solid #374151; /* Borda opcional para visibilidade */
+    border: transparent; /* Borda opcional para visibilidade */
+    text-decoration: none;     /* Remove sublinhado */
+    border-radius: 5px;        /* Bordas arredondadas (opcional) */
+    cursor: pointer;
+}
+.botao-vermelho{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent; /* Fundo branco */
+    color: #ffffff;            /* Texto preto para contraste */
+    border: transparent; /* Borda opcional para visibilidade */
     text-decoration: none;     /* Remove sublinhado */
     border-radius: 5px;        /* Bordas arredondadas (opcional) */
     cursor: pointer;
