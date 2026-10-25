@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pagina03.css">
+  <title>Lumos - Status da Rede</title>
+</head>
+<body>
 
+  <!-- CONTAINER PRINCIPAL DA APLICAÇÃO -->
+  <div class="app-container">
+
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="img/slogan.png" alt="Logo" class="logo">
+        <div class="sidebar-text">
+          <h2 class="nome-empresa">LUMOS</h2>
+          <p class="sublogo">REDE E INTEGRIDADE</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <p class="painel">PAINÉIS</p>
+        <a href="pagina01.html" class="menu-item">
+          <img src="img/maps.png" alt="Mapa de Ocorrências" class="menu-icon">
+          <span class="menu-text">Mapa de Ocorrências</span>
+          <span class="badge">2</span>
+        </a>
+        <a href="pagina02.html" class="menu-item">
+          <img src="img/indicadores_select.png" alt="Indicadores ENEL" class="menu-icon">
+          <span class="menu-text">Indicadores ENEL</span>
+        </a>
+        <a href="pagina03.html" class="menu-item active">
+          <img src="img/status.png" alt="Status da Rede" class="menu-icon">
+          <span class="menu-text">Status da Rede</span>
+        </a>
+        <a href="pagina04.html" class="menu-item">
+          <img src="img/alertas.png" alt="Alertas Críticos" class="menu-icon">
+          <span class="menu-text">Alertas Críticos</span>
+          <span class="badge">1</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="avatar-badge">CE</div>
+        <div class="user-info">
+          <span class="user-name">Centro de Operação</span>
+          <span class="user-sub">Enel Ceará</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+      <header class="content-header">
+        <div class="header-left">
+          <h1>Status da Rede</h1>
+          <p>Cobertura de sensores e condição geral da infraestrutura monitorada</p>
+        </div>
+
+        <div class="header-right">
+          <svg class="pulse-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40">
+            <path d="M 0 20 L 25 20 L 32 5 L 40 35 L 48 10 L 55 25 L 62 20 L 100 20" 
+                  fill="none" stroke="#2EB4AF" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+
+          <div class="system-badge">
+            <span class="dot-online"></span>
+            <span>SISTEMA ONLINE</span>
+          </div>
+
+          <div class="sync-info">
+            <span class="sync-label">Última sincronização</span>
+            <span class="sync-time">14:12:52</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- GRID DOS 3 CARDS SUPERIORES -->
+      <div class="cards-grid">
+
+        <!-- Card 1: Cabos Monitorados -->
+        <div class="status-card">
+          <h2 class="card-title">Cabos monitorados</h2>
+          
+          <div class="chart-container">
+            <div class="donut-chart">
+              <div class="chart-center">
+                <span class="number">312</span>
+                <span class="label">de 360 km cobertos</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="chart-footer">86% da rede prioritária com sensoriamento ativo</p>
+        </div>
+
+        <!-- Card 2: Status Geral -->
+        <div class="status-card">
+          <h2 class="card-title">Status geral</h2>
+          
+          <div class="alert-pill">
+            <span class="orange-dot"></span>
+            <span>Alerta de interrupção</span>
+          </div>
+
+          <ul class="data-list">
+            <li class="list-item">
+              <span class="item-label">Setores normais</span>
+              <span class="item-value text-success">41</span>
+            </li>
+            <li class="list-item">
+              <span class="item-label">Setores em alerta</span>
+              <span class="item-value text-warning">5</span>
+            </li>
+            <li class="list-item">
+              <span class="item-label">Setores críticos</span>
+              <span class="item-value text-danger">2</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Sensores em Campo -->
+        <div class="status-card">
+          <h2 class="card-title">Sensores em campo</h2>
+          
+          <ul class="data-list spacing-top">
+            <li class="list-item">
+              <span class="item-label">Corrente elétrica</span>
+              <span class="item-value">184 <small>ativos</small></span>
+            </li>
+            <li class="list-item">
+              <span class="item-label">Vibração</span>
+              <span class="item-value">176 <small>ativos</small></span>
+            </li>
+            <li class="list-item">
+              <span class="item-label">Bateria baixa</span>
+              <span class="item-value text-warning">7 <small>unidades</small></span>
+            </li>
+            <li class="list-item">
+              <span class="item-label">Offline &gt; 24h</span>
+              <span class="item-value text-danger">3 <small>unidades</small></span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- LEGENDA DE CÓDIGO DE CORES (RODAPÉ) -->
+      <div class="legend-card">
+        <h2 class="card-title">Legenda de código de cores</h2>
+        
+        <div class="legend-grid">
+          <div class="legend-box box-normal">NORMAL</div>
+          <div class="legend-box box-alerta">ALERTA</div>
+          <div class="legend-box box-critico">CRÍTICO</div>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
