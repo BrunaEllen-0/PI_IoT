@@ -1,0 +1,688 @@
+/* ============================================================
+   1. RESET GLOBAL E BASE DE TELA
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html, body {
+  height: 100vh;
+  overflow: hidden; /* Evita a barra de rolagem global */
+  background-color: #080D18;
+  color: #ffffff;
+}
+
+/* ============================================================
+   2. CONTAINER PRINCIPAL (LADO A LADO)
+   ============================================================ */
+.app-container {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  height: 100vh !important;
+  overflow: hidden;
+}
+
+/* ============================================================
+   3. BARRA LATERAL (SIDEBAR FIXA)
+   ============================================================ */
+.sidebar {
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+  height: 100vh !important;
+  background-color: #111A2C;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-right: 1px solid #1E293B;
+  flex-shrink: 0 !important;
+  box-sizing: border-box;
+}
+
+.sidebar-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #1E293B;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+}
+
+.sidebar-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nome-empresa {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.sublogo {
+  font-size: 9px;
+  color: #8A99AD;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.painel {
+  font-size: 13px;
+  color: #2EB4AF;
+  padding: 0 4px;
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+.menu-item:hover {
+  background-color: #1E293B;
+  border-color: #196865;
+  color: #ffffff;
+}
+
+.menu-item.active {
+  background-color: rgba(46, 180, 175, 0.15);
+  border-color: #2EB4AF;
+  color: #2EB4AF;
+  font-weight: 600;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.menu-text {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.badge {
+  margin-left: auto;
+  background-color: #E11D48;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #1E293B;
+}
+
+.avatar-badge {
+  width: 40px;
+  height: 40px;
+  background-color: #172136;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #EAB308;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.user-sub {
+  color: #64748B;
+  font-size: 11px;
+}
+
+/* ============================================================
+   4. ÁREA PRINCIPAL COM ROLAGEM INDEPENDENTE
+   ============================================================ */
+.main-content {
+  flex: 1 1 auto !important;
+  width: calc(100% - 250px) !important;
+  height: 100vh !important;
+  padding: 32px 40px;
+  box-sizing: border-box;
+  overflow-y: auto !important;
+}
+
+.content-header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-header h1 {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.content-header p {
+  color: #64748B;
+  font-size: 14px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.system-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #2EB4AF;
+  background-color: rgba(46, 180, 175, 0.08);
+  color: #2EB4AF;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.dot-online {
+  width: 6px;
+  height: 6px;
+  background-color: #2EB4AF;
+  border-radius: 50%;
+}
+
+.sync-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.sync-label {
+  color: #64748B;
+  font-size: 11px;
+}
+
+.sync-time {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ============================================================
+   5. BANNER DE ALERTA CRÍTICO
+   ============================================================ */
+.alert-banner {
+  background-color: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.alert-icon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(239, 68, 68, 0.15);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.alert-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: #EF4444;
+}
+
+.alert-details h2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #EF4444;
+  letter-spacing: 0.5px;
+}
+
+.alert-details p {
+  font-size: 12px;
+  color: #94A3B8;
+  margin-top: 2px;
+}
+
+/* ============================================================
+   6. GRID DE DUAS COLUNAS
+   ============================================================ */
+.dispatch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.left-col, .right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-card {
+  background-color: #111A2C;
+  border: 1px solid #1E293B;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-header h2, .content-card > h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.card-subtitle {
+  font-size: 10px;
+  color: #64748B;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   7. SELEÇÃO DE EQUIPES
+   ============================================================ */
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.team-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #080D18;
+  border: 1px solid #1E293B;
+  border-radius: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.team-option input[type="radio"] {
+  display: none;
+}
+
+.custom-radio {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #64748B;
+  display: inline-block;
+  position: relative;
+}
+
+.team-option.active {
+  border-color: #2EB4AF;
+  background-color: rgba(46, 180, 175, 0.05);
+}
+
+.team-option.active .custom-radio {
+  border-color: #2EB4AF;
+}
+
+.team-option.active .custom-radio::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #2EB4AF;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.team-badge {
+  width: 32px;
+  height: 32px;
+  background-color: #172136;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2EB4AF;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.team-details h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.team-details p {
+  font-size: 11px;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+.team-distance {
+  margin-left: auto;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.dist-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.dist-time {
+  font-size: 11px;
+  color: #64748B;
+}
+
+.team-option.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.team-status-tag {
+  margin-left: auto;
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #F59E0B;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+/* ============================================================
+   8. SWITCHES DE NOTIFICAÇÕES
+   ============================================================ */
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.notif-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #1E293B;
+}
+
+.notif-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.notif-info h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.notif-info p {
+  font-size: 11px;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #1E293B;
+  transition: .3s;
+  border-radius: 22px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ffffff;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2EB4AF;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* ============================================================
+   9. MAPA E INFORMAÇÕES DO LOCAL
+   ============================================================ */
+.map-container {
+  height: 180px;
+  background-color: #1a2332;
+  border-radius: 10px;
+  background-image: radial-gradient(#2a364f 1px, transparent 1px);
+  background-size: 12px 12px;
+  position: relative;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border: 1px solid #1E293B;
+}
+
+.map-pin {
+  width: 20px;
+  height: 20px;
+  background-color: #EF4444;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 40%;
+  left: 55%;
+  border: 2px solid #ffffff;
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #1E293B;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label { color: #64748B; }
+.detail-value { color: #ffffff; }
+.text-bold { font-weight: 700; }
+.text-warning { color: #F59E0B; font-weight: 700; }
+
+/* ============================================================
+   10. SELECTOR DE PRIORIDADE E AÇÕES
+   ============================================================ */
+.section-title {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748B;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+.section-title.margin-top {
+  margin-top: 20px;
+}
+
+.priority-selector {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.priority-btn {
+  background-color: #080D18;
+  border: 1px solid #1E293B;
+  color: #64748B;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.priority-btn.active-critica {
+  background-color: rgba(239, 68, 68, 0.15);
+  border-color: #EF4444;
+  color: #EF4444;
+}
+
+.instructions-textarea {
+  width: 100%;
+  background-color: #080D18;
+  border: 1px solid #1E293B;
+  border-radius: 8px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 12px;
+  resize: none;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn-cancel {
+  background-color: transparent;
+  border: 1px solid #1E293B;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-confirm {
+  background-color: #FF4D6D;
+  border: none;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-confirm svg {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+
+/* Botão de prioridade ativo (aplica o destaque vermelho para qualquer opção selecionada) */
+.priority-btn.active,
+.priority-btn.active-critica {
+  background-color: rgba(239, 68, 68, 0.15);
+  border-color: #EF4444;
+  color: #EF4444;
+}
