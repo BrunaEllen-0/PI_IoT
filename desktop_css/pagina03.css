@@ -1,1 +1,410 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+html, body {
+  height: 100%;
+  background-color: #080D18;
+  color: #ffffff;
+}
+/* ============================================================
+   2. CONTAINER PRINCIPAL (ALINHAMENTO SIDEBAR + MAIN CONTENT)
+   ============================================================ */
+.app-container {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.sidebar {
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: #111A2C;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-right: 1px solid #1E293B;
+  flex-shrink: 0 !important;
+  box-sizing: border-box;
+}
+.sidebar-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #1E293B;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+}
 
+.sidebar-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nome-empresa {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.sublogo {
+  font-size: 9px;
+  color: #8A99AD;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+.painel {
+  font-size: 13px;
+  color: #2EB4AF;
+  padding: 0 4px;
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+.menu-item:hover {
+  background-color: #1E293B;
+  border-color: #196865;
+  color: #ffffff;
+}
+
+.menu-item.active {
+  background-color: rgba(46, 180, 175, 0.15);
+  border-color: #2EB4AF;
+  color: #2EB4AF;
+  font-weight: 600;
+}
+.menu-icon, .menu-icon-left {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.menu-text {
+  font-size: 14px;
+  line-height: 1.2;
+}
+.badge {
+  margin-left: auto;
+  background-color: #E11D48;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #1E293B;
+}
+
+.avatar-badge {
+  width: 40px;
+  height: 40px;
+  background-color: #172136;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #EAB308;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-name {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.user-sub {
+  color: #64748B;
+  font-size: 11px;
+}
+
+.main-content {
+  flex: 1 1 auto !important;
+  width: calc(100% - 250px) !important;
+  padding: 32px 40px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* CABEÇALHO COM STATUS DO SISTEMA */
+.content-header {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.content-header h1 {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.content-header p {
+  color: #64748B;
+  font-size: 14px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pulse-icon {
+  width: 60px;
+  height: 25px;
+}
+
+.system-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #2EB4AF;
+  background-color: rgba(46, 180, 175, 0.08);
+  color: #2EB4AF;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.dot-online {
+  width: 6px;
+  height: 6px;
+  background-color: #2EB4AF;
+  border-radius: 50%;
+}
+.sync-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.sync-label {
+  color: #64748B;
+  font-size: 11px;
+}
+
+.sync-time {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.status-card, .legend-card {
+  background-color: #111A2C;
+  border: 1px solid #1E293B;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+/* CARD 1: GRÁFICO CIRCULAR DE DONUT */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0 20px;
+}
+
+.donut-chart {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: conic-gradient(#2EB4AF 0deg 309deg, #1E293B 309deg 360deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-center {
+  width: 108px;
+  height: 108px;
+  background-color: #111A2C;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.chart-center .number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.chart-center .label {
+  font-size: 10px;
+  color: #64748B;
+  margin-top: 4px;
+}
+
+.chart-footer {
+  text-align: center;
+  color: #64748B;
+  font-size: 12px;
+  margin-top: auto;
+}
+
+/* CARD 2 E 3: LISTAS DE DADOS E PILULAS */
+.alert-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #F59E0B;
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.orange-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #F59E0B;
+  border-radius: 50%;
+}
+
+.data-list {
+  list-style: none;
+}
+
+.data-list.spacing-top {
+  margin-top: 8px;
+}
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #1E293B;
+}
+.list-item:last-child {
+  border-bottom: none;
+}
+.item-label {
+  color: #94A3B8;
+  font-size: 13px;
+}
+.item-value {
+  font-weight: 700;
+  font-size: 15px;
+}
+.item-value small {
+  font-weight: 400;
+  font-size: 12px;
+  color: #64748B;
+}
+
+/* TEXTOS COLORIDOS */
+.text-success { color: #2EB4AF; }
+.text-warning { color: #F59E0B; }
+.text-danger  { color: #EF4444; }
+/* ============================================================
+   6. LEGENDA DE CORES (CARD INFERIOR)
+   ============================================================ */
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.legend-box {
+  padding: 14px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  font-size: 13px;
+}
+.box-normal {
+  background-color: rgba(46, 180, 175, 0.15);
+  border: 1px solid rgba(46, 180, 175, 0.3);
+  color: #2EB4AF;
+}
+.box-alerta {
+  background-color: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #F59E0B;
+}
+.box-critico {
+  background-color: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #EF4444;
+}
