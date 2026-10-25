@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pagina05.css">
+  <title>Lumos - Histórico do Sensor</title>
+</head>
+<body>
+
+  <!-- CONTAINER PRINCIPAL DA APLICAÇÃO -->
+  <div class="app-container">
+
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="../img/slogan.png" alt="Logo" class="logo">
+        <div class="sidebar-text">
+          <h2 class="nome-empresa">LUMOS</h2>
+          <p class="sublogo">REDE E INTEGRIDADE</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <p class="painel">PAINÉIS</p>
+        <a href="pagina01.html" class="menu-item">
+          <img src="../img/maps.png" alt="Mapa de Ocorrências" class="menu-icon">
+          <span class="menu-text">Mapa de Ocorrências</span>
+          <span class="badge">2</span>
+        </a>
+        <a href="pagina02.html" class="menu-item">
+          <img src="../img/indicadores.png" alt="Indicadores ENEL" class="menu-icon">
+          <span class="menu-text">Indicadores ENEL</span>
+        </a>
+        <a href="pagina03.html" class="menu-item">
+          <img src="../img/status.png" alt="Status da Rede" class="menu-icon">
+          <span class="menu-text">Status da Rede</span>
+        </a>
+        <a href="pagina04.html" class="menu-item active">
+          <img src="../img/alertas-select.png" alt="Alertas Críticos" class="menu-icon">
+          <span class="menu-text">Alertas Críticos</span>
+          <span class="badge">1</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="avatar-badge">CE</div>
+        <div class="user-info">
+          <span class="user-name">Centro de Operação</span>
+          <span class="user-sub">Enel Ceará</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+      
+      <!-- CABEÇALHO DO PAINEL -->
+      <header class="content-header">
+        <div class="header-left">
+          <h1>Histórico do sensor</h1>
+          <p>Leituras, eventos e manutenções registradas no</p>
+        </div>
+
+        <div class="header-right">
+          <div class="system-badge">
+            <span class="dot-online"></span>
+            <span>SENSOR ONLINE</span>
+          </div>
+
+          <div class="sync-info">
+            <span class="sync-label">Última sincronização</span>
+            <span class="sync-time">14:12:52</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- BANNER DE DETALHES DO SENSOR -->
+      <div class="sensor-banner">
+        <div class="sensor-info">
+          <div class="sensor-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 2L3 14h9l-1 8 10-12h-8l1-8z"/>
+            </svg>
+          </div>
+          <div>
+            <h2>Sensor SNR-0442 • Av. Aílton Gomes</h2>
+            <p>CORRENTE + VIBRAÇÃO • POSTE PST-0442 • INSTALADO EM 12/08/2026</p>
+          </div>
+        </div>
+
+        <div class="sensor-actions">
+          <span class="pill-danger">3 EVENTOS HOJE</span>
+          <span class="pill-success">BATERIA 80%</span>
+          <button class="btn-export">Exportar CSV</button>
+        </div>
+      </div>
+
+      <!-- CARDS KPIS (4 COLUNAS) -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-title">EVENTOS (30 DIAS)</span>
+          <span class="kpi-value">14</span>
+          <span class="kpi-subtext">3 confirmados com furto</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-title">DISPONIBILIDADE</span>
+          <span class="kpi-value text-success">99,2%</span>
+          <span class="kpi-subtext">tempo online no período</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-title">FALSOS POSITIVOS</span>
+          <span class="kpi-value text-warning">4</span>
+          <span class="kpi-subtext">oscilações descartadas</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-title">ÚLTIMA MANUTENÇÃO</span>
+          <span class="kpi-value">28d</span>
+          <span class="kpi-subtext">troca de bateria - 03/09/2026</span>
+        </div>
+      </div>
+
+      <!-- GRID DE CONTEÚDO (DUAS COLUNAS: GRÁFICO/TABELA E LINHA DO TEMPO) -->
+      <div class="dashboard-body-grid">
+        
+        <!-- COLUNA DA ESQUERDA -->
+        <div class="left-column">
+          
+          <!-- CARD DE GRÁFICO -->
+          <div class="content-card">
+            <div class="card-header">
+              <h2>Leitura de corrente e vibração</h2>
+              <div class="time-filters">
+                <button class="filter-btn">24 horas</button>
+                <button class="filter-btn active">7 Dias</button>
+                <button class="filter-btn">30 Dias</button>
+              </div>
+            </div>
+
+            <div class="chart-wrapper">
+              <canvas id="sensorReadingsChart"></canvas>
+            </div>
+
+            <div class="chart-legend">
+              <span class="legend-item"><span class="dot cyan"></span> Corrente elétrica</span>
+              <span class="legend-item"><span class="dot orange"></span> Vibração</span>
+              <span class="legend-item"><span class="dot red"></span> Evento detectado</span>
+            </div>
+          </div>
+
+          <!-- CARD DE TABELA -->
+          <div class="content-card">
+            <div class="card-header">
+              <h2>Registro de eventos</h2>
+              <span class="card-subtitle">ÚLTIMOS 7 DIAS</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="events-table">
+                <thead>
+                  <tr>
+                    <th>DATA / HORA</th>
+                    <th>TIPO</th>
+                    <th>CORRENTE</th>
+                    <th>VIBRAÇÃO</th>
+                    <th>DESFECHO</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>15/09 • 14:22</td>
+                    <td><span class="tag tag-furto">furto</span></td>
+                    <td>0% <span class="arrow-down">↓</span></td>
+                    <td>alta</td>
+                    <td class="text-danger">em atendimento</td>
+                  </tr>
+                  <tr>
+                    <td>14/09 • 03:11</td>
+                    <td><span class="tag tag-oscilacao">oscilação</span></td>
+                    <td>62%</td>
+                    <td>baixa</td>
+                    <td class="text-muted">falso positivo</td>
+                  </tr>
+                  <tr>
+                    <td>12/09 • 19:47</td>
+                    <td><span class="tag tag-manutencao">manutenção</span></td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td class="text-muted">calibração do sensor</td>
+                  </tr>
+                  <tr>
+                    <td>11/09 • 08:02</td>
+                    <td><span class="tag tag-oscilacao">oscilação</span></td>
+                    <td>71%</td>
+                    <td>média</td>
+                    <td class="text-muted">falso positivo</td>
+                  </tr>
+                  <tr>
+                    <td>09/09 • 22:35</td>
+                    <td><span class="tag tag-normal">normal</span></td>
+                    <td>98%</td>
+                    <td>nula</td>
+                    <td class="text-muted">sem ação</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUNA DA DIREITA (LINHA DO TEMPO) -->
+        <div class="right-column">
+          <div class="content-card timeline-card">
+            <h2>Linha do tempo</h2>
+
+            <div class="timeline">
+              
+              <div class="timeline-item">
+                <div class="timeline-icon icon-danger"><img src="img/alerta01.png" alt=""></div>
+                <div class="timeline-content">
+                  <h3>Evento detectado pelo sensor</h3>
+                  <p>Queda de corrente a 0% + vibração acima do normal po 94s</p>
+                  <span class="timeline-time">03/09/2026 - 14:22:07</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-icon icon-warning"><img src="img/clock01.png" alt=""></div>
+                <div class="timeline-content">
+                  <h3>Classificado como possível furto</h3>
+                  <p>ESP32 descartou padrão de oscilação comum da rede</p>
+                  <span class="timeline-time">03/09/2026 - 14:22:00</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-icon icon-warning"><img src="img/wifi01.png" alt=""></div>
+                <div class="timeline-content">
+                  <h3>Trasmitindo via LoRaWAN</h3>
+                  <p>Pacote recebido pelo servidor em nuvem do LUME</p>
+                  <span class="timeline-time">03/09/2026 - 14:22:13</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-icon icon-danger"><img src="img/alerta01.png" alt=""></div>
+                <div class="timeline-content">
+                  <h3>Alerta exibido no painel de operação</h3>
+                  <p>Pino ativo no mapa e notificação à central da Enel</p>
+                  <span class="timeline-time">03/09/2026 - 14:22:15</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-icon icon-success"><img src="img/aviao01.png" alt=""></div>
+                <div class="timeline-content">
+                  <h3>Equipe ENL-07 acionada</h3>
+                  <p>Chamado enviado ao app do agente - ETA 9 min</p>
+                  <span class="timeline-time">03/09/2026 - 14:22:41</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-icon icon-info"><img src="img/bola01.png" alt=""></div>
+                <div class="timeline-content">
+                  <h3>Aguardando chegada da equipe</h3>
+                  <p>Diagnóstico em campo pendente previsto para 14:32</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="pagina05.js"></script>
+</body>
+</html>
