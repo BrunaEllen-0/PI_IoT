@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="pagina06.css"> 
+  <link rel="stylesheet" href="../css/pagina06.css"> 
   <title>Lumos - Acionar Equipe de Campo</title>
 </head>
 <body>
 
-  <!-- AQUI -->
   <div class="app-container">
 
     <!-- BARRA LATERAL (SIDEBAR) -->
@@ -33,11 +32,11 @@
           <span class="menu-text">Indicadores ENEL</span>
         </a>
         <a href="pagina03.html" class="menu-item">
-          <img src="../img/status.png" assssssst="Status da Rede" class="menu-icon">
+          <img src="../img/status.png" alt="Status da Rede" class="menu-icon">
           <span class="menu-text">Status da Rede</span>
         </a>
         <a href="pagina04.html" class="menu-item active">
-          <img src="img/alertas-select.png" alt="Alertas Críticos" class="menu-icon">
+          <img src="../img/alertas_select.png" alt="Alertas Críticos" class="menu-icon">
           <span class="menu-text">Alertas Críticos</span>
           <span class="badge">1</span>
         </a>
@@ -153,7 +152,6 @@
             <h2>Notificações automáticas</h2>
 
             <div class="notifications-list">
-              
               <div class="notif-item">
                 <div class="notif-info">
                   <h3>Central de Operação Enel Ceará</h3>
@@ -197,7 +195,6 @@
                   <span class="slider"></span>
                 </label>
               </div>
-
             </div>
           </div>
 
@@ -213,10 +210,8 @@
               <span class="card-subtitle">POSTE PST-0442</span>
             </div>
 
-            <!-- Mappa Visual Placeholder -->
             <div class="map-container">
               <div class="map-overlay">
-                
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7916.464460772386!2d-39.312920200000015!3d-7.214328849999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a178a5b1a5143d%3A0xc52737ed005d38ae!2sFranciscanos%2C%20Juazeiro%20do%20Norte%20-%20CE!5e0!3m2!1spt-BR!2sbr!4v1792959757548!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
               </div>
             </div>
@@ -256,6 +251,7 @@ Efetuar o registo fotográfico previamente a qualquer intervenção.
 
             <div class="action-buttons">
               <button class="btn-cancel">Cancelar</button>
+
               <button class="btn-confirm">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
@@ -272,7 +268,60 @@ Efetuar o registo fotográfico previamente a qualquer intervenção.
     </main>
 
   </div>
-<!-- SCRIPT DE INTERAÇÃO -->
-  <script src="pagina06.js"></script>
+
+  <!-- MODAL DE SUCESSO (ESTRUTURA QUE FALTAVA) -->
+  <div id="modal-sucesso" class="modal-overlay hidden">
+    <div class="modal-content">
+      
+      <div class="modal-icon-success">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <h2>Acionamento concluído com sucesso</h2>
+      <p class="modal-description">
+        A <strong id="modal-nome-equipe">Equipe ENL-07 • Carlos M.</strong> foi acionada para a ocorrência <strong>#482</strong> e já recebeu o chamado no app do agente técnico.
+      </p>
+
+      <div class="modal-details">
+        <div class="detail-row">
+          <span>Equipe</span>
+          <strong id="modal-equipe-resumo">Equipe ENL-07 • Carlos M.</strong>
+        </div>
+        <div class="detail-row">
+          <span>Composição</span>
+          <span id="modal-composicao">2 Técnicos • Van técnica</span>
+        </div>
+        <div class="detail-row">
+          <span>Prioridade</span>
+          <span class="badge-prioridade-critica">CRÍTICA</span>
+        </div>
+        <div class="detail-row">
+          <span>Distância / chegada</span>
+          <span id="modal-distancia">4,2 km — ~9 min</span>
+        </div>
+        <div class="detail-row">
+          <span>Acionada às</span>
+          <span id="modal-hora">14:12:45</span>
+        </div>
+      </div>
+
+      <div class="modal-tags">
+        <span class="tag-check">✓ central de operação enel ceará</span>
+        <span class="tag-check">✓ autoridades policiais</span>
+        <span class="tag-check">✓ app do agente técnico</span>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-modal-close" onclick="fecharModal()">Fechar</button>
+        <button type="button" class="btn-modal-confirm" onclick="irParaAlertas()">Concluido</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPT DE INTERAÇÃO -->
+  <script src="../js/pagina06.js"></script>
 </body>
 </html>
