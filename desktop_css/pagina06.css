@@ -554,16 +554,10 @@ input:checked + .slider:before {
   border: 1px solid #1E293B;
 }
 
-.map-pin {
-  width: 20px;
-  height: 20px;
-  background-color: #EF4444;
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 40%;
-  left: 55%;
-  border: 2px solid #ffffff;
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .location-details {
@@ -622,6 +616,7 @@ input:checked + .slider:before {
   cursor: pointer;
 }
 
+.priority-btn.active,
 .priority-btn.active-critica {
   background-color: rgba(239, 68, 68, 0.15);
   border-color: #EF4444;
@@ -679,10 +674,141 @@ input:checked + .slider:before {
   fill: #ffffff;
 }
 
-/* Botão de prioridade ativo (aplica o destaque vermelho para qualquer opção selecionada) */
-.priority-btn.active,
-.priority-btn.active-critica {
-  background-color: rgba(239, 68, 68, 0.15);
-  border-color: #EF4444;
-  color: #EF4444;
+/* ============================================================
+   11. MODAL DE SUCESSO (ESTILOS DA CAIXA CENTRALIZADA)
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(4, 7, 13, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
+
+.modal-overlay.hidden {
+  display: none !important;
+}
+
+.modal-content {
+  background-color: #111A2C;
+  border: 1px solid #1E293B;
+  border-radius: 12px;
+  width: 440px;
+  max-width: 90%;
+  padding: 28px 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.modal-icon-success {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(16, 185, 129, 0.12);
+  border: 2px solid #10B981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.modal-icon-success svg {
+  width: 28px;
+  height: 28px;
+}
+
+.modal-content h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.modal-description {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.modal-description strong {
+  color: #ffffff;
+}
+
+.modal-details {
+  width: 100%;
+  background-color: #080D18;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+}
+
+.badge-prioridade-critica {
+  color: #FF3366 !important;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.tag-check {
+  background-color: rgba(46, 180, 175, 0.12);
+  color: #2EB4AF;
+  border: 1px solid rgba(46, 180, 175, 0.3);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-modal-close {
+  flex: 1;
+  background-color: #172136;
+  color: #ffffff;
+  border: 1px solid #1E293B;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btn-modal-confirm {
+  flex: 1;
+  background-color: #2EB4AF;
+  color: #080D18;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.btn-modal-close:hover { background-color: #1E293B; }
+.btn-modal-confirm:hover { opacity: 0.9; }
